@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="A Systematic Far Field EM Side-Channel Evaluation and Introduction of SC2026 Dataset">
+  <meta name="keywords" content="FEM-SCA, Screaming Channel, Side-Channel Analysis, Deep Learning, Dataset, SC2026">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SC2026: Far Field EM Side-Channel Evaluation</title>
+
+  <!-- 1. 引入 Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <!-- 2. 引入 Bulma 框架 (核心布局库) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+  <!-- 3. 引入 FontAwesome 图标库 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- 4. 引入本地样式文件 -->
+  <link rel="stylesheet" href="./static/css/index.css">
+
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          
+          <!-- 1. 论文标题 -->
+          <h1 class="title is-1 publication-title">
+            A Systematic Far Field EM Side-Channel Evaluation and Introduction of SC2026 Dataset
+          </h1>
+          
+          <!-- 2. 作者列表 -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Huanyu Wang,</span>
+            <span class="author-block">Xiaoxia Wang,</span>
+            <span class="author-block">Kaiqiang Ge,</span>
+            <span class="author-block">Jinjie Yao,</span>
+            <span class="author-block">Xinyan Tan,</span>
+            <span class="author-block">Junnian Wang<sup>*</sup></span>
+          </div>
+
+          <div class="is-size-6 institution-block">
+            <span class="author-block"><sup>1</sup>School of Computer Science and Engineering, HNUST</span><br>
+            <span class="author-block"><sup>2</sup>School of Physics and Electronic Science, HNUST</span>
+          </div>
+
+          <!-- 3. 核心按钮 (Paper, Code, Dataset) -->
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link -->
+              <span class="link-block">
+                <a href="#" class="button btn-pdf">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link -->
+              <span class="link-block">
+                <a href="https://github.com/SCA-HNUST" class="button btn-code">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- Dataset Link (重点突出) -->
+              <span class="link-block">
+                <a href="#" class="button btn-data">
+                  <span class="icon"><i class="fas fa-database"></i></span>
+                  <span>SC2026 Dataset</span>
+                </a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Teaser Image (实物图) -->
+<section class="section" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <!-- Fig 2，展示走廊、足球场和金属墙 -->
+        <img src="static\image\environments.jpg" class="teaser-img" alt="Experimental Setup">
+        <h2 class="subtitle has-text-centered is-size-6" style="margin-top:10px; color:#666;">
+          <strong>Figure 1:</strong> Experimental setup for the SC2026 dataset collection across varying distances (up to 30m) and barriers (brick, metal, plastic).
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. 摘要 (Abstract) -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified abstract-box">
+          <p>
+            Far Field Electromagnetic Side-Channel Attacks (FEM-SCAs), also known as <b>screaming channel attacks</b>, represent a growing threat to RF-enabled IoT devices, as they can be conducted remotely over the air. While prior research has demonstrated various FEM-SCA techniques, most studies remain limited to specific case studies.
+          </p>
+          <p>
+            In this paper, we bridge that gap through a practical and extensive FEM-SCA evaluation. We first construct and publicly release a novel dataset, the <b>Screaming Channel 2026 dataset (SC2026)</b>, comprising far-field EM traces captured from multiple crypto (<b>AES, SM4, Kyber</b>) across distances (<b>1 - 30 m</b>) and through various barriers (brick, metal, plastic). Afterwards, we perform a detailed leakage assessment and experimentally evaluate more than 10 attack methods, ranging from classical CPA to modern deep learning approaches including <b>Transformer-based models</b>, establishing a systematic benchmark for future research.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. SC2026 Dataset 详情 (核心贡献) -->
+<section class="section" style="background-color: #f5f5f5;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">The SC2026 Dataset</h2>
+    <div class="content has-text-justified">
+      <p>
+        SC2026 is designed to simulate real-world scenarios for IoT security evaluation. It supports both profiling (template building) and attack evaluation under challenging conditions.
+      </p>
+      
+      <!-- 数据集统计徽章 -->
+      <div class="has-text-centered" style="margin-bottom: 20px;">
+        <span class="tag is-info is-light is-large">Target: nRF52832</span>
+        <span class="tag is-success is-light is-large">Traces: 40K Profiling / 5K Testing</span>
+        <span class="tag is-warning is-light is-large">Max Distance: 30m</span>
+      </div>
+
+      <div class="columns is-centered">
+        <!-- 左侧：文字参数 -->
+        <div class="column is-half">
+          <table class="benchmark-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Algorithms</b></td>
+                <td>TinyAES, SM4, CRYSTALS-Kyber</td>
+              </tr>
+              <tr>
+                <td><b>Distances</b></td>
+                <td>0m, 3m, 6m, 9m, 12m, 15m, 30m</td>
+              </tr>
+              <tr>
+                <td><b>Environments</b></td>
+                <td>Office Corridor, Soccer Field, Lab</td>
+              </tr>
+              <tr>
+                <td><b>Barriers</b></td>
+                <td>Plastic, Wood, Metal</td>
+              </tr>
+              <tr>
+                <td><b>Format</b></td>
+                <td>NumPy (.npy)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- 右侧：原理图 -->
+        <div class="column is-half has-text-centered">
+          <img src="static\image\work-illustration.jpg" style="border-radius: 10px; border:1px solid #ccc;" alt="Attack Concept">
+          <p class="is-size-7" style="margin-top:5px;">Illustration of mixed-signal chip leakage propagation.</p>
+        </div>
+      </div>
+      
+      <!-- 波形展示 -->
+      <div class="has-text-centered" style="margin-top: 30px;">
+        <img src="static\image\trace-example.jpg" style="width: 100%; max-width: 800px;" alt="Trace Examples">
+        <p class="is-size-7">Figure 3: Trace examples of Kyber, SM4, and TinyAES captured in SC2026.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 7. Benchmark 结果 (评估) -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Systematic Benchmark</h2>
+    <div class="content">
+      <p>
+        We evaluated over 10 attack methods, including <b>Switch-T Transformer</b>, <b>DAR-NN</b>, and classical <b>CPA</b>. Below is a summary of the attack performance on the SM4 implementation at 15 meters.
+      </p>
+      
+      <!-- 模拟一个结果表格，根据论文 Fig 4 或 Table 填入真实数据 -->
+      <div class="table-container">
+        <table class="benchmark-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Type</th>
+              <th>Traces to Recovery (15m)</th>
+              <th>Success Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CPA</td>
+              <td>Statistical</td>
+              <td>> 50,000</td>
+              <td>10%</td>
+            </tr>
+            <tr>
+              <td>Classic CNN</td>
+              <td>Deep Learning</td>
+              <td>~ 5,000</td>
+              <td>85%</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><b>Switch-T (Ours)</b></td>
+              <td><b>Transformer</b></td>
+              <td><b>~ 1,500</b></td>
+              <td><b>99%</b></td>
+            </tr>
+            <tr>
+              <td>DAR-NN</td>
+              <td>Domain Adaptation</td>
+              <td>~ 2,000</td>
+              <td>95%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Citation</h2>
+    <p>If you use the SC2026 dataset or our code, please cite our paper:</p>
+    <pre><code>@article{wang2025systematic,
+  title={A Systematic Far Field EM Side-Channel Evaluation and Introduction of SC2026 Dataset},
+  author={Wang, Huanyu and Wang, Xiaoxia and Ge, Kaiqiang and Yao, Jinjie and Tan, Xinyan and Wang, Junnian},
+  journal={IEEE Transactions on Information Forensics and Security},
+  year={2025},
+  month={December}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        Website template based on <a href="https://nerfies.github.io">Nerfies</a>. <br>
+        Maintained by <a href="https://github.com/sca-hnust">SCA-HNUST</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+

@@ -1,0 +1,160 @@
+/* static/css/index.css */
+
+/* 1. 基础字体与背景设置 */
+body {
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #fcfcfc;
+  color: #4a4a4a;
+  line-height: 1.5;
+}
+
+/* 2. 标题字体特殊处理 (仿 Google Research 风格) */
+.title.is-1 {
+  font-family: 'Google Sans', sans-serif;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #363636;
+}
+
+.title.is-3 {
+  font-family: 'Google Sans', sans-serif;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #363636;
+}
+
+/* 3. 作者与机构信息样式 */
+.publication-authors {
+  margin-top: 1.5rem;
+}
+
+.author-block {
+  display: inline-block;
+  font-size: 1.25rem;
+  margin-right: 15px;
+  color: #363636;
+}
+
+.author-note {
+  font-size: 0.8rem;
+  vertical-align: super;
+}
+
+.institution-block {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 10px;
+  margin-bottom: 1.5rem;
+}
+
+/* 4. 核心功能按钮 (Paper/Code/Dataset) */
+.publication-links {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.link-block {
+  margin: 5px;
+  display: inline-block;
+}
+
+.link-block a {
+  color: #fff;
+  font-weight: 600;
+  border-radius: 30px; /* 圆角胶囊样式 */
+  padding: 0.5rem 1.5rem;
+  transition: all 0.2s ease-in-out;
+  border: none;
+}
+
+/* 按钮颜色定义 */
+.btn-pdf { background-color: #363636; }
+.btn-code { background-color: #24292e; } /* GitHub 黑 */
+.btn-data { background-color: #209cee; } /* 亮蓝，强调数据集 */
+
+/* 按钮悬停效果 */
+.link-block a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  opacity: 0.9;
+  color: white;
+}
+
+/* 5. 摘要框 (Abstract Box) */
+.abstract-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05); /* 轻微阴影 */
+  margin-top: 1rem;
+}
+
+/* 6. 图片容器样式 */
+.hero-body {
+  padding-bottom: 1rem;
+  padding-top: 3rem;
+}
+
+.teaser-img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+}
+
+/* 7. 实验数据表格样式 (Benchmark Table) */
+.table-container {
+  overflow-x: auto; /* 移动端可横向滚动 */
+}
+
+.benchmark-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: white;
+  font-size: 0.95rem;
+  border: 1px solid #eee;
+}
+
+.benchmark-table th {
+  background-color: #f5f5f5;
+  padding: 12px;
+  border-bottom: 2px solid #ddd;
+  text-align: center;
+  font-weight: 700;
+}
+
+.benchmark-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  color: #4a4a4a;
+}
+
+/* 高亮行 (用于突出您的算法) */
+.highlight-row {
+  background-color: #f0f8ff; /* 淡蓝色背景 */
+  font-weight: bold;
+}
+.highlight-row td {
+  color: #209cee;
+}
+
+/* 8. 引用块 (Citation) */
+pre {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 15px;
+  border: 1px solid #eee;
+  font-size: 0.9rem;
+  overflow-x: auto;
+}
+
+/* 9. 页脚 */
+.footer {
+  background-color: #f5f5f5;
+  padding: 3rem 1.5rem;
+  margin-top: 3rem;
+}
